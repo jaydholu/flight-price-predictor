@@ -8,7 +8,8 @@ from feature_engine.datetime import DatetimeFeatures
 
 
 def build_preprocessor():
-    datetime_columns = ['Date_of_Journey', 'Dep_Time', 'Arrival_Time']
+    doj_columns = ['Date_of_Journey']
+    time_columns = ['Dep_Time', 'Arrival_Time']
     numeric_columns = ['Duration', 'Total_Stops']
     categorical_columns = ['Airline', 'Source', 'Destination', 'Additional_Info']
 
@@ -37,8 +38,8 @@ def build_preprocessor():
     preprocessor = ColumnTransformer(transformers=[
         ('numerical', numerical_transformer, numeric_columns),
         ('categorical', categorical_transformer, categorical_columns),
-        ('doj', doj_transformer, ['Date_of_Journey']),
-        ('time', time_transformer, ['Dep_Time', 'Arrival_Time'])
+        ('doj', doj_transformer, doj_columns),
+        ('time', time_transformer, time_columns)
     ])
 
     return preprocessor

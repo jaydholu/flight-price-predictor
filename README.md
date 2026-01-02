@@ -6,13 +6,13 @@
 
 <h1>Model Performance</h1>
 <h4>Best model: Random Forest Regressor</h4>
-<h4>R² Score: 0.9344</h4>
+<h4>Test R² Score: 0.923</h4>
 <br>
 
 <h1>Dataset</h1>
 <ul>
     <li>Source: Kaggle - Flight Price Prediction Dataset</li>
-    <li>Features include: Airline, Source, Destination, Total Stops, Duration, etc.</li>
+    <li>Features include: Airline, Source, Destination, Duration, Price, etc.</li>
 </ul>
 <br>
 

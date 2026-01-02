@@ -1,24 +1,28 @@
+import os
 import joblib
 import pandas as pd
+from dotenv import load_dotenv
 from datetime import datetime, timedelta
 from flask import Flask, render_template, redirect, request, url_for, flash
 from forms import InputForm
 
+load_dotenv(".env")
+
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = "SmF5IGlzIGtpbmcgb2YgdGhlIHVuaXZlcnNlLiBIZSBpcyB1bmRlZmVhdGFibGUsIGV2ZW4gYnkgQWxpZW5zLg=="
-model = joblib.load("models/flight-price-predictor.joblib")
+app.config['SECRET_KEY'] = os.getenv("SECRET_KEY", "secret-key")
+model = joblib.load("models/predictor.joblib")
 
 
 @app.route("/")
 @app.route("/home")
 def home():
-    return render_template('index.html', title="Home")
+    return render_template('index.html', title="Home | Flight Price Predictor")
 
 
 @app.route("/about")
 def about():
-    return render_template('about.html', title="About")
+    return render_template('about.html', title="About | Flight Price Predictor")
 
 
 @app.route("/predict", methods=['GET', 'POST'])
@@ -69,13 +73,13 @@ def predict():
             print("Form not validated!")
             print(form.errors)
 
-    return render_template('predict.html', title="Predict", form=form)
+    return render_template('predict.html', title="Predict | Flight Price Predictor", form=form)
 
 
 @app.route("/predicted")
 def predicted():
     message = request.args.get('message')
-    return render_template('predicted.html', title="Predicted Price", message=message)
+    return render_template('predicted.html', title="Predicted Price | Flight Price Predictor", message=message)
 
 
 # web-application starts from here (entry point)

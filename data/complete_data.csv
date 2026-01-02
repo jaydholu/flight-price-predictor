@@ -1,4 +1,4 @@
-Airline,Date_of_Journey,Source,Destination,Route,Dep_Time,Arrival_Time,Duration,Total_Stops,Additional_Info,Price
+Airline,DOJ,Source,Destination,Route,Departure_Time,Reaching_Time,Duration,Total_Stops,Additional_Info,Price
 IndiGo,2019-03-24,Banglore,New Delhi,BLR → DEL,2025-04-26 22:20:00,2025-03-22 01:10:00,2h 50m,non-stop,No info,3897
 Air India,2019-05-01,Kolkata,Banglore,CCU → IXR → BBI → BLR,2025-04-26 05:50:00,2025-04-26 13:15:00,7h 25m,2 stops,No info,7662
 Jet Airways,2019-06-09,Delhi,Cochin,DEL → LKO → BOM → COK,2025-04-26 09:25:00,2025-06-10 04:25:00,19h,2 stops,No info,13882
